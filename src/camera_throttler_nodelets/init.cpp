@@ -35,7 +35,7 @@
 #include <sensor_msgs/Image.h>
 
 #include <nodelet_topic_tools/nodelet_throttle.h>
-namespace camera_throttle_nodelets{
+namespace camera_throttler_nodelets{
 typedef nodelet_topic_tools::NodeletThrottle<sensor_msgs::CompressedImage> NodeletThrottleCompressedImage;
 typedef nodelet_topic_tools::NodeletThrottle<dynamic_reconfigure::ConfigDescription> NodeletThrottleParameterDescription;
 typedef nodelet_topic_tools::NodeletThrottle<dynamic_reconfigure::Config> NodeletThrottleParameterUpdates;
@@ -43,8 +43,8 @@ typedef nodelet_topic_tools::NodeletThrottle<sensor_msgs::CameraInfo> NodeletThr
 typedef nodelet_topic_tools::NodeletThrottle<sensor_msgs::Image> NodeletThrottleImage;
 }
 
-PLUGINLIB_EXPORT_CLASS(camera_throttle_nodelets::NodeletThrottleCompressedImage, nodelet::Nodelet);
-PLUGINLIB_EXPORT_CLASS(camera_throttle_nodelets::NodeletThrottleParameterDescription, nodelet::Nodelet);
-PLUGINLIB_EXPORT_CLASS(camera_throttle_nodelets::NodeletThrottleParameterUpdates, nodelet::Nodelet);
-PLUGINLIB_EXPORT_CLASS(camera_throttle_nodelets::NodeletThrottleImage, nodelet::Nodelet);
-PLUGINLIB_EXPORT_CLASS(camera_throttle_nodelets::NodeletThrottleCameraInfo, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(camera_throttler_nodelets::NodeletThrottleCompressedImage, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(camera_throttler_nodelets::NodeletThrottleParameterDescription, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(camera_throttler_nodelets::NodeletThrottleParameterUpdates, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(camera_throttler_nodelets::NodeletThrottleImage, nodelet::Nodelet);
+PLUGINLIB_EXPORT_CLASS(camera_throttler_nodelets::NodeletThrottleCameraInfo, nodelet::Nodelet);

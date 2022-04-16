@@ -17,29 +17,29 @@
   <node if="$(arg launch_nodelet_manager)" pkg="nodelet" type="nodelet" ns="$(arg nodelet_manager_namespace)" name="$(arg nodelet_manager_name)" args="manager" output="screen" />
   
   
-  <node if="$(arg broadcast_compressed_topic)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/compressed/" name="data_throttle" args="load throttle_compressed_image::NodeletThrottleCompressedImage $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
+  <node if="$(arg broadcast_compressed_topic)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/compressed/" name="data_throttle" args="load throttler_compressed_image::NodeletThrottleCompressedImage $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
     <remap from="topic_in"  to="$(arg in_camera_namespace)/$(arg in_camera_name)/compressed"/>
     <remap from="topic_out" to="$(arg out_camera_namespace)/$(arg out_camera_name)/compressed"/>
   </node>
 
 
-  <node if="$(arg broadcast_parameter_updates)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/parameter_updates/" name="data_throttle" args="load throttle_compressed_image::NodeletThrottleParameterUpdates  $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
+  <node if="$(arg broadcast_parameter_updates)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/parameter_updates/" name="data_throttle" args="load throttler_compressed_image::NodeletThrottleParameterUpdates  $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
     <remap from="topic_in"  to="$(arg in_camera_namespace)/$(arg in_camera_name)/parameter_updates"/>
     <remap from="topic_out" to="$(arg out_camera_namespace)/$(arg out_camera_name)/parameter_updates"/>
   </node>
 
 
-  <node if="$(arg broadcast_raw_topic)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/" name="data_throttle" args="load throttle_compressed_image::NodeletThrottleImage   $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
+  <node if="$(arg broadcast_raw_topic)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/" name="data_throttle" args="load throttler_compressed_image::NodeletThrottleImage   $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
     <remap from="topic_in"  to="$(arg in_camera_namespace)/$(arg in_camera_name)"/>
     <remap from="topic_out" to="$(arg out_camera_namespace)/$(arg out_camera_name)"/>
   </node>
 
-  <node if="$(arg broadcast_parameter_descriptions)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/parameter_description/" name="data_throttle" args="load throttle_compressed_image::NodeletThrottleParameterDescription   $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
+  <node if="$(arg broadcast_parameter_descriptions)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/parameter_description/" name="data_throttle" args="load throttler_compressed_image::NodeletThrottleParameterDescription   $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
     <remap from="topic_in"  to="$(arg in_camera_namespace)/$(arg in_camera_name)/parameter_description"/>
     <remap from="topic_out" to="$(arg out_camera_namespace)/$(arg out_camera_name)/parameter_description/"/>
   </node>
 
-  <node if="$(arg broadcast_camera_info)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/camera_info/" name="data_throttle" args="load throttle_compressed_image::NodeletThrottleCameraInfo $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
+  <node if="$(arg broadcast_camera_info)" pkg="nodelet" type="nodelet" ns="$(arg out_camera_namespace)/$(arg out_camera_name)/camera_info/" name="data_throttle" args="load throttler_compressed_image::NodeletThrottleCameraInfo $(arg nodelet_manager_namespace)/$(arg nodelet_manager_name)" output="screen">
     <remap from="topic_in"  to="$(arg in_camera_namespace)/$(arg in_camera_name)/camera_info"/>
     <remap from="topic_out" to="$(arg out_camera_namespace)/$(arg out_camera_name)/camera_info"/>
   </node>
