@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.0.2)
 project(camera_throttler_nodelets)
 
-include($ENV{ROS_ROOT}/core/rosbuild/FindPkgConfig.cmake)
-
 find_package(catkin REQUIRED COMPONENTS nodelet_topic_tools pluginlib sensor_msgs)
 catkin_package(
 #  INCLUDE_DIRS include
